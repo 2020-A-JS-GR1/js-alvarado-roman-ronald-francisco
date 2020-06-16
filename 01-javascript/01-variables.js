@@ -82,7 +82,7 @@ if(undefined){
 //Un objeto javascript tiene la siguiente sintaxis
 
 const ronald = {
-    nombre: "Adrian", // llave: valor,
+    nombre: "Ronald", // llave: valor,
     apellido: "Alvarado",
     edad: 25,
     hijos: null,
@@ -91,10 +91,93 @@ const ronald = {
     ropa: {
         color: 'plomo',
         talla: '45'
-    }
+    },
 }; //object
 
+//Acceder a las propiedades del objeto
 ronald.apellido;
+ronald.edad;
+
+//Otra sintaxis para acceder a los valores
+ronald["nombre"]; // Ronald
+
+//sobrescribir
+ronald.nombre = "";
+console.log(ronald);
+
+//se puede agregar nuevos atrobutos
+ronald.sueldo; //undefined
+
+ronald.sueldo = 1.2; // 1.2
+ronald["gastos"] = 0.8; // 0.8
+
+//Eliminar el valor de una llave
+ronald.gastos = undefined;
+
+delete ronald.gastos; // Elimina de verdad la variable gastos sin ubicar el undefined
+
+// La clase objeto
+//Para obtener las llaves de un objeto 
+Object.keys(ronald);
+
+//Para obtener los valores de un objeto 
+Object.values(ronald);
+
+//Variables por valor en JS
+//number
+//string
+//boolean
+//undefined
+let edadRonald = 31;
+let edadFrancisco = edadRonald;
+
+console.log(edadRonald); // 31
+console.log(edadFrancisco); // 31
+edadRonald = edadRonald + 1;
+console.log(edadRonald); // 32
+console.log(edadFrancisco); // 32
+
+//Variables por referencia em JS
+let rafael = {
+    nombre: "Rafael"
+}
+
+let lenin = rafael;
+
+console.log(rafael);
+console.log(lenin);
+lenin.nombre = "Lenin";
+console.log(rafael);
+console.log(lenin);
+
+
+delete rafael.nombre;
+console.log(rafael);
+console.log(lenin);
+
+let lenin = Object.assign({},rafael);
+console.log(rafael);
+console.log(lenin);
+lenin.nombre = "Lenin";
+delete rafael.nombre;
+console.log(rafael);
+console.log(lenin);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Arreglo de numeros
 const arregloNumeros = []; // object
