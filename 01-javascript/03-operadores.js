@@ -133,4 +133,49 @@ console.log('arreglo',arreglo);
 //Revisar Teams  nota >= 14
 
 
+//Hay alguna nota menor a 9
 
+//OR
+const respuestaSome = arreglo
+    .some(
+        (valorActual, indiceActual, arregloCompleto)=>{
+            return valorActual.nota < 9;
+        }
+    );
+console.log('respuestaSome', respuestaSome);
+
+
+//EVERY
+// DEVUELVE BOOLEANO
+// Todas LAS NOTAS SON MAYORES ? SI NO
+// AND
+
+const respuestaAny = arreglo
+    .every(
+        (valorActual, indiceActual, arregloCompleto)=>{
+            return valorActual.nota > 14;
+        }
+    );
+console.log('respuestaAny', respuestaSome);
+
+
+//Reduce izq ->der
+// ReduceRight der -> izq
+const respuestaReduce = arreglo
+    .reduce(
+        (valorAcumulador, valorActual, indice, arreglo) =>{
+            return valorAcumulador + valorActual.nota;
+        },
+        0 //Acumulador
+    );
+console.log('RespuestaReduce', respuestaReduce)
+
+
+const  arregloEstudiantesMenoresANueve = arreglo
+.map((v)=>v.nota*1.3) //aniadiendo el 30%
+.filter((nota)=> nota<9); // Busco a los < 9
+const totalPuntosEstudantes = arregloEstudiantesMenoresANueve
+    .reduce((acumuldao, actual)=> acumuldao+actual,0); //total
+const notaPromedio = totalPuntosEstudantes / arregloEstudiantesMenoresANueve.length;
+
+console.log('RespuestaPromedio', notaPromedio);
