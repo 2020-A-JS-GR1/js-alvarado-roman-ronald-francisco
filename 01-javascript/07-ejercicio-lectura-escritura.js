@@ -31,8 +31,6 @@ function escribirArchivo(path, contenidoNuevo) {
             }
         }
     )
-
-
-
 }
+
 escribirArchivo('./06-ejemplo.txt', 'Nuevo contenido 5');

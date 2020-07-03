@@ -9,8 +9,6 @@ function promesaEsPar(numero) {
             }else {
                 reject('No es par =(');
             }
-
-
         }
     );
     return miPrimerPromesa
