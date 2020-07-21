@@ -163,22 +163,6 @@ delete rafael.nombre;
 console.log(rafael);
 console.log(lenin);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Arreglo de numeros
 const arregloNumeros = []; // object
 

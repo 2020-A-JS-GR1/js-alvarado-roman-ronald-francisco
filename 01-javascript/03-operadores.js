@@ -100,6 +100,7 @@ const respuestaMap = arreglo
                 nombre: valorActual.nombre,
                 nota: valorActual.nota + 1,
             };
+
             return nuevoElemento;
         }
     );
