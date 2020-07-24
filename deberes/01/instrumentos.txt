@@ -1,1 +1,3 @@
-[{"codigo":1,"tipo":1,"nombre":"FLAUTAS","precio":35,"material":true},{"codigo":3,"tipo":2,"nombre":"Guiatarra Electrica","precio":125,"material":true}]
+[{"codigo":1,"tipo":1,"nombre":"FLAUTAS","precio":35,"material":true},{"codigo":3,"tipo":2,"nombre":"Guiatarra Electrica","precio":125,"material":true}
+,
+{"codigo":4,"tipo":1,"nombre":"Corneta","precio":29,"material":false}]
