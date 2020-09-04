@@ -1,8 +1,13 @@
-<img [src]="urlEjemploImagen" alt="">
+<img [src]="urlImage" alt="" (click)="ejecutarEventoDioClicImagen()">
 
 <!-- interpolacion -->
 <a [href]="linkTextoEjmplo">
-  <p>{{textoEjemplo}}</p>
+  <p>{{descripcion}}</p>
 </a>
 
-<button (click)="ejemplpoFuncion()" (blur)="eventoOnBlur()">{{textoEjemplo}}</button>
+<button (click)="ejecutarEventoDioClic()" (blur)="eventoOnBlur()">{{nombreBoton}}</button>
+
+
+
+
+
