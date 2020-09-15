@@ -1,0 +1,34 @@
+<form #formularioUsuario="ngForm" (ngSubmit)="crearUsuario(formularioUsuario)">
+  <div>
+    <label for="nombreId">Nombre</label>
+    <input type="text" id="nombreId" name="nombre" [(ngModel)]="nombreModelo" required
+           #nombreCampo="ngModel"
+    >
+    <div *ngIf="nombreCampo.touched && nombreCampo.errors">
+      <p *ngIf="nombreCampo.errors.required"> Error: Campo requerido</p>
+      <p>Error</p>
+    </div>
+    <!-- type="number" -->
+    <!-- Con numeros -> min="0" -->
+    <!-- Con numeros -> max="10" -->
+  </div>
+  <div>
+    <label for="cedulaId">Cedula</label>
+    <input type="text" id="cedulaId" name="cedula" [(ngModel)]="cedulaModelo" required>
+  </div>
+  <div>
+    <label for="estadoCivilId">Estado Civil</label>
+    <select name="estadoCivil" id="estadoCivilId" [(ngModel)]="estadoCivilModelo">
+      <option value="Soltero">E.S. Soltero</option>
+      <option value="Casado">E.S. Casado</option>
+      <option value="Divorciado">E.S. Divorciado</option>
+      <option value="Viudo">E.S. Viudo</option>
+      <option value="Union Libre">E.S. Unio Libre</option>
+    </select>
+  </div>
+  <button type="button" (click)="ayuda()">Boton (ayuda)</button>
+  <button type="submit" [disabled]="!formularioUsuario.form.valid">Crear Usuario</button>
+  <button type="reset">Reset</button>
+  <button >Defecto</button>
+
+</form>
