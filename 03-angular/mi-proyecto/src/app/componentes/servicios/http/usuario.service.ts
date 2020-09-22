@@ -10,8 +10,8 @@ export class UsuarioService {
     private readonly _httpClient:HttpClient
   ) {
   }
-  traerTodos(){
-    return this._httpClient.get(this.url + '/Usuario')
+  traerTodos(consulta?: string){
+    return this._httpClient.get(this.url + '/Usuario?' + consulta);
   }
 
   // POST /Usuario
@@ -26,6 +26,13 @@ export class UsuarioService {
   eliminar(idUsuario: number){
     return this._httpClient.delete(
       this.url+'/Usuario/'+ idUsuario
+    )
+  }
+
+  editar(usuario, id){
+    return this._httpClient.put(
+      this.url + '/Usuario/' + id, //URL
+      usuario
     )
   }
 

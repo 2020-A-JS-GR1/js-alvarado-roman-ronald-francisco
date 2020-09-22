@@ -15,6 +15,7 @@ import { RutaCrearUsuarioComponent } from './rutas/ruta-crear-usuario/ruta-crear
 import { RutaEditarUsuarioComponent } from './rutas/ruta-editar-usuario/ruta-editar-usuario.component';
 import { FormlarioUsuarioComponent } from './componentes/formularios/formlario-usuario/formlario-usuario.component';
 import {FormsModule} from "@angular/forms";
+import {AuthService} from "./componentes/servicios/auth/auth.service";
 
 @NgModule({
   declarations: [ // Componentes
@@ -37,7 +38,8 @@ import {FormsModule} from "@angular/forms";
     // -> Importa el HttpClient
   ],
   providers: [ // Servicios
-    UsuarioService
+    UsuarioService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
