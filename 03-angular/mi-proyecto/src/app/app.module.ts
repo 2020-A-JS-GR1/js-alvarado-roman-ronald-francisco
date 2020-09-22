@@ -16,6 +16,13 @@ import { RutaEditarUsuarioComponent } from './rutas/ruta-editar-usuario/ruta-edi
 import { FormlarioUsuarioComponent } from './componentes/formularios/formlario-usuario/formlario-usuario.component';
 import {FormsModule} from "@angular/forms";
 import {AuthService} from "./componentes/servicios/auth/auth.service";
+import {EstaLogeadoGuard} from "./componentes/servicios/guards/esta-logeado.guard";
+import {EsAdministradorGuard} from "./componentes/servicios/guards/es-administrador.guard";
+import {EsSupervisorGuard} from "./componentes/servicios/guards/es-supervisor.guard";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [ // Componentes
@@ -35,11 +42,18 @@ import {AuthService} from "./componentes/servicios/auth/auth.service";
     AppRoutingModule,
     HttpClientModule, // Importa el HttpClient
     FormsModule, //Permite funcionalidad de los fomrularios Template
+    BrowserAnimationsModule, // para animaciones
+    MatButtonModule,
+    NgbModule,
+    ButtonModule,
     // -> Importa el HttpClient
   ],
   providers: [ // Servicios
     UsuarioService,
-    AuthService
+    AuthService,
+    EstaLogeadoGuard,
+    EsAdministradorGuard,
+    EsSupervisorGuard
   ],
   bootstrap: [AppComponent]
 })

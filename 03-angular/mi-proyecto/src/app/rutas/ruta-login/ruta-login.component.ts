@@ -20,7 +20,7 @@ export class RutaLoginComponent implements OnInit {
   }
 
   revisarLogin(formulario) {
-    /*const obsLogin = this._authService.login(this.correoModelo, this.cedulaModelo);
+    const obsLogin = this._authService.login(this.correoModelo, this.cedulaModelo);
     obsLogin
       .subscribe(
         (arregloUsuarios: any[]) => {
@@ -33,7 +33,7 @@ export class RutaLoginComponent implements OnInit {
         (error) => {
           console.error('Error', error);
         }
-      )*/
+      )
   }
 
 }

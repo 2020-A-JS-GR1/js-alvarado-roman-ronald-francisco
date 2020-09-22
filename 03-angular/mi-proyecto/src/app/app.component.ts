@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UsuarioService} from "./componentes/servicios/http/usuario.service";
 import {errorObject} from "rxjs/internal-compatibility";
+import {AuthService} from "./componentes/servicios/auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,8 @@ export class AppComponent implements OnInit{
 
   // Inyectar Dependencias
   constructor(
-    private readonly _usuarioService: UsuarioService
+    private readonly _usuarioService: UsuarioService,
+    private readonly _authService: AuthService
   ) {
   }
 

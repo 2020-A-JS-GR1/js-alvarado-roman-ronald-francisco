@@ -34,13 +34,29 @@
   <li>
     <a [routerLink]="['login']">Ir Login</a>
   </li>
-  <li>
+  <li *ngIf="_authService.estaAutenticado">
     <a [routerLink]="['usuario']">
       Usuarios
     </a>
   </li>
 </ul>
 
+<button mat-button color="accent"> Boton Material</button>
+<button type="button"
+  class="btn btn-outline-secondary mr-2"
+        placement="top"
+        ngbTooltip="Cuidado con verme feo"
+>
+  Tooltip on top
+
+</button>
+
+<p-button
+  label="Hola desde primeng"
+  class="p-button-secondary"
+>
+
+</p-button>
 
 <router-outlet>
 
