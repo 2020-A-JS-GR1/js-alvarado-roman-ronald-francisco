@@ -1,1 +1,10 @@
-<p>ruta-editar-instrumento works!</p>
+<div *ngIf="mostrarFormulario">
+  <app-formulario-instrumento
+    [nombreInput]="instrumento.nombre"
+    [precioInput]="instrumento.precio"
+    [materialInput]="instrumento.material"
+    (informacionValidada)="editarInstrumento($event)"
+  >
+
+  </app-formulario-instrumento>
+</div>

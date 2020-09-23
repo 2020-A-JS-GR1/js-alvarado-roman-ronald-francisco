@@ -9,6 +9,10 @@ import { RutaInstrumentoComponent } from './rutas/ruta-instrumento/ruta-instrume
 import { RutaListaInstrumentoComponent } from './rutas/ruta-lista-instrumento/ruta-lista-instrumento.component';
 import { RutaCrearInstrumentoComponent } from './rutas/ruta-crear-instrumento/ruta-crear-instrumento.component';
 import { RutaEditarInstrumentoComponent } from './rutas/ruta-editar-instrumento/ruta-editar-instrumento.component';
+import {InstrumentoService} from "./servicios/http/instrumento.service";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {TipoInstrumentoService} from "./servicios/http/tipoInstrumento.service";
 
 @NgModule({
   declarations: [
@@ -22,9 +26,14 @@ import { RutaEditarInstrumentoComponent } from './rutas/ruta-editar-instrumento/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    InstrumentoService,
+    TipoInstrumentoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

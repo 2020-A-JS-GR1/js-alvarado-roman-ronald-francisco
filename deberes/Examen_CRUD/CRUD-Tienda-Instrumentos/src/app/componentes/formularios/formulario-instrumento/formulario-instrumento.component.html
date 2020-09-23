@@ -1,28 +1,35 @@
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-10 col-md-8 col-lg-6">
-      <form class="form">
+      <div class="form-row">
+        Registro de instrumento
+      </div>
+      <form class="form" #fomularioInstrumento="ngForm" (ngSubmit)="crearInstrumento(fomularioInstrumento)">
         <div class="form-group">
           <label for="nombreId">Nombre</label>
-          <input type="text" class="form-control" id="nombreId" name="nombre"
+          <input type="text" class="form-control" id="nombreId" name="nombre" [(ngModel)]="nombreModelo" required
           >
         </div>
         <div class="form-group">
-          <label for="cedulaId">Cedula</label>
-          <input type="text" class="form-control" id="cedulaId" name="cedula" required>
+          <label for="precioId">Precio</label>
+          <input type="text" class="form-control" id="precioId" name="precio" [(ngModel)]="precioModelo" required>
         </div>
         <div class="form-group">
-          <label for="estadoCivilId">Estado Civil</label>
-          <select name="estadoCivil" id="estadoCivilId" >
-            <option value="Soltero">E.S. Soltero</option>
-            <option value="Casado">E.S. Casado</option>
-            <option value="Divorciado">E.S. Divorciado</option>
-            <option value="Viudo">E.S. Viudo</option>
-            <option value="Union Libre">E.S. Unio Libre</option>
+          <label for="materialId">Es madera</label>
+          <select name="material" id="materialId" [(ngModel)]="materialModelo" required>
+            <option value="true" >Si</option>
+            <option value="false">No</option>
           </select>
         </div>
+        <div class="form-group">
+          <label for="tipoId">Tipo de Instrumento</label>
+            <select name="tipo" id="tipoId" [(ngModel)]="tipoModelo" required>
+              <option *ngFor="let tipoIns of tipoInstrumento" value="{{tipoIns.id}}">{{tipoIns.nombreTipoInstrumento}}</option>
+            </select>
+        </div>
         <div class="form-group text-center">
-          <button class="btn btn-success col-md-4 mr-3 d-inline-block" type="submit">Crear</button>
+          <button class="btn btn-success col-md-4 mr-3 d-inline-block" type="submit" [disabled]="!fomularioInstrumento.form.valid" >
+            {{nombreInput ? 'Editar' : 'Crear' }}</button>
           <button class="btn btn-primary col-md-4 mr-3 d-inline-block" type="reset">Reset</button>
         </div>
       </form>

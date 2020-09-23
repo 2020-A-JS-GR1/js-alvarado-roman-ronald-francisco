@@ -4,21 +4,24 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Cedula</th>
-        <th>Acciones</th>
+        <th>Precio</th>
+        <th>Es Madera</th>
+        <th>Tipo</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr >
-        <td>usuario.id</td>
-        <td>usuario.nombre</td>
-        <td>usuario.cedula</td>
+      <tr *ngFor="let instrumento of arregloInstrumentos">
+        <td>{{instrumento.id}}</td>
+        <td>{{instrumento.nombre}}</td>
+        <td>{{instrumento.precio}}</td>
+        <td>{{instrumento.material}}</td>
+        <td>{{instrumento.tipo.nombreTipoInstrumento}}</td>
         <td>
-          <button class="btn btn-info">Editar</button>
+          <button class="btn btn-info" (click)="irAEditarInstrumento(instrumento.id)">Editar</button>
         </td>
         <td>
-          <button class="btn btn-danger">Eliminar</button>
+          <button class="btn btn-danger" (click)="eliminarInstrumento(instrumento.id)">Eliminar</button>
         </td>
 
       </tr>
