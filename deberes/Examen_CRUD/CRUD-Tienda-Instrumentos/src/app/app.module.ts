@@ -13,6 +13,8 @@ import {InstrumentoService} from "./servicios/http/instrumento.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {TipoInstrumentoService} from "./servicios/http/tipoInstrumento.service";
+import { FormularioTipoInstrumentoComponent } from './componentes/formularios/formulario-tipo-instrumento/formulario-tipo-instrumento.component';
+import { RutaTipoInstrumentoComponent } from './rutas/ruta-tipo-instrumento/ruta-tipo-instrumento.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {TipoInstrumentoService} from "./servicios/http/tipoInstrumento.service";
     RutaInstrumentoComponent,
     RutaListaInstrumentoComponent,
     RutaCrearInstrumentoComponent,
-    RutaEditarInstrumentoComponent
+    RutaEditarInstrumentoComponent,
+    FormularioTipoInstrumentoComponent,
+    RutaTipoInstrumentoComponent
   ],
   imports: [
     BrowserModule,
