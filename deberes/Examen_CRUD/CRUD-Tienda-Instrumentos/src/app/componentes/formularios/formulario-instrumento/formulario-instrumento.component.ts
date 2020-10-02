@@ -1,13 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {TipoInstrumentoService} from "../../../servicios/http/tipoInstrumento.service";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TipoInstrumentoService } from '../../../servicios/http/tipoInstrumento.service';
 
 @Component({
   selector: 'app-formulario-instrumento',
   templateUrl: './formulario-instrumento.component.html',
-  styleUrls: ['./formulario-instrumento.component.css']
+  styleUrls: ['./formulario-instrumento.component.css'],
 })
 export class FormularioInstrumentoComponent implements OnInit {
-
   @Input()
   nombreInput: string;
 
@@ -29,40 +28,36 @@ export class FormularioInstrumentoComponent implements OnInit {
 
   constructor(
     private readonly _tipoInstrumentoService: TipoInstrumentoService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    if(this.nombreInput && this.precioInput && this.materialInput){
+    if (this.nombreInput && this.precioInput && this.materialInput) {
       this.nombreModelo = this.nombreInput;
       this.precioModelo = this.precioInput;
       this.materialModelo = this.materialInput;
     }
 
     this.obtenerTipoInstrumento();
-
-
   }
 
-  crearInstrumento(formulario){
-      this.informacionValidada.emit({
-        nombre: this.nombreModelo,
-        precio: this.precioModelo,
-        material: this.materialModelo,
-        tipo: this.tipoModelo
-      })
+  crearInstrumento(formulario) {
+    this.informacionValidada.emit({
+      nombre: this.nombreModelo,
+      precio: this.precioModelo,
+      material: this.materialModelo,
+      tipo: this.tipoModelo,
+    });
   }
 
-  obtenerTipoInstrumento(){
+  obtenerTipoInstrumento() {
     const obsObtenerTipoInstrumento = this._tipoInstrumentoService.traerTodos();
-    obsObtenerTipoInstrumento
-      .subscribe(
-        (tipoInstrumento: any[])=>{
-          this.tipoInstrumento = tipoInstrumento;
-        },
-        (error) => {
-          console.error(error);
-        }
-      )
+    obsObtenerTipoInstrumento.subscribe(
+      (tipoInstrumento: any[]) => {
+        this.tipoInstrumento = tipoInstrumento;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
-
 }

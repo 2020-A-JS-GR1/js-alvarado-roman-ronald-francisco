@@ -28,7 +28,7 @@ export class InstrumentoService{
   }
 
   editar(instrumento, id: number){
-    return this._httpClient.put(this.url+'/Instrumento/'+id, instrumento);
+    return this._httpClient.put(this.url + '/Instrumento/' + id, instrumento);
   }
 
 }
